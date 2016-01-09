@@ -1,0 +1,12 @@
+-# views/admins/login.html.haml 
+%div#adlogin
+  %h1 管理员登录
+  = form_tag "/checkmanagerlogin", :method => :put do
+    %p
+      = label :name, '用户名:'
+      = text_field 'name', 'name',:size=>40
+    %p
+      = label  :passwd, '密码:'
+      = text_field 'passwd', 'passwd',:size=>40
+    %p= submit_tag '登录',class:"submit"
+  %p= link_to '用户登录',"/login"

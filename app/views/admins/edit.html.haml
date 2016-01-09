@@ -1,0 +1,13 @@
+-# edit.html.haml using partial
+%div#editad
+  %h1 修改个人信息
+  = form_tag admin_path(@admin), :method => :put do
+    %p  
+      = label :admin, :name, '用户名:'
+      = text_field :admin, 'name',:size=>40
+    %p
+      = label :admin, :passwd, '密码:'
+      = text_field :admin, 'passwd',:size=>40
+    %p= submit_tag '更新个人信息',class:"submit"
+    %p= link_to '返回',"/manage"
+

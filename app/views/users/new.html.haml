@@ -1,0 +1,12 @@
+%div#newuser
+  %h1 添加新用户
+  = form_tag users_path do
+    %p
+      = label :user, :name, '用户名:'
+      = text_field :user, 'name',:size=>40
+    %p
+      = label :user, :passwd, '密码:'
+      = text_field :user, 'passwd',:size=>40
+    %p= submit_tag '添加用户',class:"submit"
+  = link_to '返回', users_path
+  

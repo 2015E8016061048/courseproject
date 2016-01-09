@@ -1,0 +1,12 @@
+%div#newad
+  %h1 Create New admin
+  = form_tag admins_path do
+    %p  
+      = label :admin, :name, 'Name'
+      = text_field :admin, 'name',:maxlength => 40, :size => 40
+    %p
+      = label :admin, :passwd, 'Password'
+      = text_field :admin, 'passwd',:maxlength => 40, :size => 40
+    %p= submit_tag 'Save Changes',class:"submit"
+  %p= link_to 'Back to admin list',"/admins"
+  

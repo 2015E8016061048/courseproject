@@ -1,0 +1,14 @@
+%div#signup
+  %h1 用户注册
+  = form_tag "/createuser" do
+    %p
+      = label :user, :name, '用户名:'
+      = text_field :user, 'name',:size=>40
+    %p
+      = label :user, :passwd, '密码:'
+      = text_field :user, 'passwd',:size=>40
+    %p= submit_tag '注册',class:"submit"
+  %p= link_to '取消',"/login"
+  
+  
+  

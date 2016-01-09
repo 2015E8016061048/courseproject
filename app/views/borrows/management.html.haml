@@ -1,0 +1,27 @@
+-#  This file is app/views/borrows/management.html.haml
+
+%h1 设备借还信息
+%table#borrows
+  %thead
+    %tr
+      %th 用户编号
+      %th 设备编号
+      %th 借出时间
+      %th 归还期限
+      %th 实际归还时间
+      %th 删除记录
+  %tbody
+    - @borrows.each do |borrow|
+      %tr
+        %td= borrow.user_id
+        %td= borrow.device_id
+        %td= borrow.borrowtime
+        %td= borrow.ordertime
+        %td= borrow.givebacktime
+        %td= link_to '删除', "/borrows/#{borrow.id}", :method => :delete, :confirm => 'Are you sure?'
+%p= link_to '返回管理员页面',"/manage" 
+            
+            
+            
+
+

@@ -1,0 +1,15 @@
+-# edit.html.haml using partial
+%div#edituser
+  %h1 编辑当前用户
+  = form_tag user_path(@user), :method => :put do
+    %p
+      = label :user, :name, '姓名:'
+      = text_field :user, 'name',:maxlength => 40, :size => 40
+    %p
+      = label :user, :passwd, '密码:'
+      = text_field :user, 'passwd',:maxlength => 40, :size => 40
+    %p= submit_tag '更新',class:"submit"
+  - if session[:admin_id] != nil and session[:admin_id] != ""
+    = link_to '返回用户管理', users_path
+  - if session[:user_id] != nil and session[:user_id] != ""
+    %p= link_to '返回', "/devices"

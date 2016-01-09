@@ -1,0 +1,122 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #fff; 
+    background: white;
+    color: #333; 
+    font-family: 微软雅黑, arial, helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+}
+ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    background: white;
+}
+div#main {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+    background: white;
+    padding:4px;
+}
+
+a, a:link, a:active, a:visited {
+    color: #0066cc;
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+a:hover  {  color: red;}
+#container{width:100%;}
+#header {background-color:#333;height:30px;text-align:right;color:white; font-size: 13px;}
+#menu {height:500px;width:15%;float:left;text-align:right;}
+#content {height:500px;width:85%;float:left;}
+#icon{float:left; font-family: arial;padding-left:10%;font-weight: bold;
+      font-size: 22px;line-height:25px;   height:25px;
+      overflow:hidden;   }
+#borrow_q{float:none;height:20px;}
+.submit{float:none;background-color:#0066cc;color:white;height:25px;}
+
+.mi{line-height:25px;   height:25px;font-weight:bold;
+        overflow:hidden; float:right;padding-right:1%;
+}
+.center { MARGIN-RIGHT: auto; MARGIN-LEFT: auto; }
+.notice{text-align:center;color:red;font-size:14px;}
+#show{text-align:center;float:inherit;}
+#login{margin:auto;height:350px;width:400px;text-align:left;}
+#edituser,#editad,#editdevice,
+#signup,#adlogin,
+#newuser,#newdevice,#newad{margin:auto;height:650px;width:400px;text-align:left;}
+
+ul {
+    margin: auto;
+    list-style-type: circle;
+}
+
+li {
+    margin: auto;
+    line-height: 1.4em;
+    margin-bottom: 7px; 
+    text-align:left;
+}
+
+td {background-color: white;}
+
+select {
+  font-size: 1.1em;
+}
+table   {
+  margin: auto;
+  border-collapse: collapse;
+  width: 85%;
+  text-align: left;
+  
+}
+table   th {
+ 
+  font-weight: bold;
+  background-color: #eee;
+}
+table   th, table   td {
+  padding:15px;
+  text-align: center;
+}
+table tr{
+    border-bottom: 1.5px solid  #eee;
+}
+#notice {
+  font-size:14px;
+  background-color: #b2e5b2;
+  color: #060;
+  padding:1px 1em;
+}
+
+#warning{
+  background-color: #f3c2c2;
+  font-size:14px;
+  padding:1px 1em;
+  color: #770000;}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  font-size:15px;
+  color: black;
+}
+
+h1 {
+    color: black; 
+    font-family:  arial, helvetica, sans-serif; 
+    text-align: inherit;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: .3em;
+    margin-top: 5pt;
+    padding: .2em 0;
+}

@@ -1,0 +1,20 @@
+-# /view/user/login.html.haml 
+%div#login
+  %h1 用户登录
+  = form_tag "/checklogin", :method => :put do
+    %p
+      = label :name, '用户名:'
+      = text_field 'name', 'name', :class => 'textbox activate', :maxlength => 40, :size => 40
+    %p
+      = label  :passwd, '密码:'
+      = text_field 'passwd', 'passwd', :class => 'textbox password', :maxlength => 40, :size => 40
+    .buttons
+      = submit_tag '登录',class:"submit"
+  %p  
+    = link_to '注册',"/signup"
+    = link_to '管理员登录',"/managerlogin"
+  %p
+    = t('powered_by')
+    %a{ :href => "" } Easyusing 教学设备管理系统
+    = t('version')
+

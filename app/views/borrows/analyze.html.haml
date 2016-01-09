@@ -1,0 +1,16 @@
+%h1 统计分析
+%table
+  %thead
+    %tr
+      %th 设备编号
+      %th 借出次数
+      %th 百分比
+  %tbody
+  - @counts.each do |c|
+    %tr
+      %td= c[0] 
+      %td= c[1]
+      %td= "#{(c[1].to_f*100/@sum.to_f).to_i} %"
+      
+%p
+  = link_to '返回管理员页面',"/manage"

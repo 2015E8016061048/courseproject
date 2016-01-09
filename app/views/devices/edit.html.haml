@@ -1,0 +1,21 @@
+-# edit.html.haml using partial
+%div#editdevice
+  %h1 修改设备信息
+  = form_tag device_path(@device), :method => :put do
+    %p
+      = label :device, :name, '设备名称'
+      = text_field :device, 'name',:size=>40
+    %p
+      = label :device, :kind, '设备类型'
+      = text_field :device, 'kind',:size=>40
+    %p
+      = label :device, :description, '详细信息'
+      = text_field :device, 'description',:size=>40
+    %p
+      = label :device, :department, '所属部门'
+      = text_field :device, 'department',:size=>40
+    %p
+      = label :device, :statement, '设备状态'
+      = text_field :device, 'statement',:size=>40
+    %p= submit_tag '更新设备信息',class:"submit"
+  %p= link_to '返回',"/managedevices"

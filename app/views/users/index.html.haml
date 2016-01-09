@@ -1,0 +1,24 @@
+-#  This file is app/views/users/index.html.haml
+
+%h1  用户管理
+
+ 
+%table#users
+  %thead
+    %tr
+      %th 用户名
+      %th 密码
+      %th 编辑用户
+      %th 删除用户
+  
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to "#{user.name}", user_path(user)
+        %td= user.passwd
+        %td= link_to "编辑",  edit_user_path(user)
+        %td= link_to '删除', user_path(user), :method => :delete, :confirm => 'Are you sure?'
+            
+%p           
+= link_to '添加新用户', new_user_path
+%p= link_to '返回管理员页面',"/manage" 

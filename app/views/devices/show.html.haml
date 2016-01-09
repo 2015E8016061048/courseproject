@@ -1,0 +1,28 @@
+-# in app/views/devices/show.html.haml
+%div#show
+  %h1 教学设备: #{@device.name}
+  %table
+    %thead
+      %tr
+        %th 设备编号
+        %th 设备名称
+        %th 设备类型
+        %th 详细信息
+        %th 所属部门
+        %th 设备状态 
+    %tbody
+      %tr
+        %td= @device.id
+        %td= @device.name
+        %td= @device.kind
+        %td= @device.description
+        %td= @device.department
+        %td= @device.statement
+  - if session[:admin_id] != nil and session[:admin_id] != ""
+    = link_to '修改设备信息', edit_device_path(@device)
+    = link_to '删除设备信息', device_path(@device), :method => :delete, :confirm => 'Are you sure?'
+    = link_to '返回', "/managedevices"
+  - if session[:user_id] != nil and session[:user_id] != ""
+    %p
+      = link_to '返回', "/devices"
+
