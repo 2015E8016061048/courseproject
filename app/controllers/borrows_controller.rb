@@ -30,7 +30,7 @@ class BorrowsController < ApplicationController
   
   
   def giveback
-    @borrow = Borrow.where("user_id= ? and strftime('%Y-%m-%d',givebacktime) = strftime('%Y-%m-%d', '1990-01-01') and device_id = ?",session[:user_id],params[:id]).take
+    @borrow = Borrow.where("user_id= ? and date(givebacktime) = date('1990-01-01') and device_id = ?",session[:user_id],params[:id]).take
     @borrow.givebacktime = Time.now
     @borrow.save
     
