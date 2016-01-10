@@ -1,11 +1,11 @@
 class Borrow < ActiveRecord::Base
   def Borrow.ungiveback userid
-    ugdevices = Borrow.where("user_id= ? and strftime('%Y-%m-%d',givebacktime) = strftime('%Y-%m-%d', '1990-01-01') ",userid)
+    ugdevices = Borrow.where("user_id= ? and date( givebacktime) = date('1990-01-01') ",userid)
     return ugdevices
   end
   
   def Borrow.allungiveback
-    allugdevices = Borrow.where("strftime('%Y-%m-%d',givebacktime) = strftime('%Y-%m-%d', '1990-01-01')")
+    allugdevices = Borrow.where("date( givebacktime) = date('1990-01-01') ")
     return allugdevices
   end
   
