@@ -2697,3 +2697,192 @@ Cannot render console from 121.195.114.229! Allowed networks: 127.0.0.1, ::1, 12
 Processing by AdminsController#login as HTML
   Rendered admins/login.html.haml within layouts/application (2.1ms)
 Completed 200 OK in 103ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/managerlogin" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#login as HTML
+  Rendered admins/login.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 199ms (Views: 190.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/borrows.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/default.self-cccf2c131aac09429df7634ecea410eb51d14408530573c111099239258b6342.css?body=1" for 121.195.114.166 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.166! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.166 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.166! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 121.195.114.166 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.166! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-3ad9a189e282f93d4e08b6b4af94c9dd70e5aaa8557b7704050a875ed67faf50.js?body=1" for 121.195.114.166 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.166! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.240 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/borrows.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.166 at 2016-01-13 06:57:22 +0000
+Cannot render console from 121.195.114.166! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.163 at 2016-01-13 06:57:23 +0000
+Cannot render console from 121.195.114.163! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.165 at 2016-01-13 06:57:23 +0000
+Cannot render console from 121.195.114.165! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 121.195.114.169 at 2016-01-13 06:57:23 +0000
+Cannot render console from 121.195.114.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/managerlogin" for 121.195.114.147 at 2016-01-13 06:58:29 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#login as HTML
+  Rendered admins/login.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 153ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.147 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/borrows.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.231 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/default.self-cccf2c131aac09429df7634ecea410eb51d14408530573c111099239258b6342.css?body=1" for 121.195.114.147 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.51 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 121.195.114.49 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.49! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.53 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 121.195.114.55 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 121.195.114.231 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-3ad9a189e282f93d4e08b6b4af94c9dd70e5aaa8557b7704050a875ed67faf50.js?body=1" for 121.195.114.147 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.51 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/borrows.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.49 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.49! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.53 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.55 at 2016-01-13 06:58:30 +0000
+Cannot render console from 121.195.114.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 121.195.114.231 at 2016-01-13 06:58:31 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/managerlogin" for 121.195.114.231 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AdminsController#login as HTML
+  Rendered admins/login.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 137ms (Views: 136.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/borrows.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.55 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/default.self-cccf2c131aac09429df7634ecea410eb51d14408530573c111099239258b6342.css?body=1" for 121.195.114.53 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.231 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.51 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 121.195.114.49 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.49! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 121.195.114.147 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 121.195.114.55 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 121.195.114.53 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-3ad9a189e282f93d4e08b6b4af94c9dd70e5aaa8557b7704050a875ed67faf50.js?body=1" for 121.195.114.231 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.51 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/borrows.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.49 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.49! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/devices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.147 at 2016-01-13 06:58:32 +0000
+Cannot render console from 121.195.114.147! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 121.195.114.55 at 2016-01-13 06:58:33 +0000
+Cannot render console from 121.195.114.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 121.195.114.53 at 2016-01-13 06:58:33 +0000
+Cannot render console from 121.195.114.53! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
