@@ -1,0 +1,85 @@
+-#  This file is app/views/devices/index.html.haml
+%div.center#container
+  %div#header
+    %div#icon
+      Easyusing 教学设备管理系统
+    %div.mi
+      = link_to '退出' , "/logout"  
+    %div.mi
+      当前用户 #{session[:user_name]} 
+    %div.mi
+      = link_to '查看历史记录' ,"/users/#{ session[:user_id]}/history"
+    %div.mi
+      = link_to '更改个人信息' ,"/users/#{ session[:user_id]}/edit"
+
+  %div#menu
+    %h3 分类查看设备
+    %p=link_to "我借用的设备","/devices?k=my"
+    %p=link_to "全部可借设备","/devices?k=available"
+    %p=link_to "全部设备","/devices"
+    - @kinds.each do |k|
+      %p=link_to  k,"/devices?k=#{k}" 
+
+  %div#content
+    = form_tag "/search", :method => :put do
+      %p
+        = text_field :borrow, 'q',size:60
+        = submit_tag '搜索设备',class: "submit"
+      
+    - @remind.each do |r|
+      - if  r.ordertime.to_i- r.borrowtime.to_i >24*60*60
+        - if Time.now.to_i >r.ordertime.to_i
+          %p.notice= "编号为 #{r.device_id} 的设备已超过归还期限！"
+        - elsif r.ordertime.to_i-Time.now.to_i  <= 60*60
+          %p.notice="还有不足 #{(r.ordertime.to_i-Time.now.to_i)/60} 分钟就要归还编号为 #{r.device_id} 的设备！" 
+        - elsif r.ordertime.to_i-Time.now.to_i  <= 24*60*60
+          %p.notice= "还有不足 #{(r.ordertime.to_i-Time.now.to_i)/(3600)} 小时就要归还编号为 #{r.device_id} 的设备！" 
+      - elsif r.ordertime.to_i- r.borrowtime.to_i > 60*60
+        - if Time.now.to_i >r.ordertime.to_i
+          %p.notice= "编号为 #{r.device_id} 的设备已超过归还期限！"
+        - elsif r.ordertime.to_i-Time.now.to_i  <= 60*60
+          %p.notice="还有不足 #{(r.ordertime.to_i-Time.now.to_i)/60} 分钟就要归还编号为 #{r.device_id} 的设备！" 
+      - elsif r.ordertime.to_i- r.borrowtime.to_i >= 5*60
+        - if Time.now.to_i >r.ordertime.to_i
+          %p.notice= "编号为 #{r.device_id} 的设备已超过归还期限！"
+        - elsif r.ordertime.to_i-  Time.now.to_i < 5*60
+          %p.notice= "还有不足 #{((r.ordertime-  Time.now)/60).to_i+1} 分钟就要归还编号为 #{r.device_id} 的设备！" 
+      - else
+        %p.notice="#{r.device_id}出错！" 
+
+    %table#devices
+      %thead
+        %tr
+          %th 设备编号
+          %th 设备名称
+          %th 设备类型
+          %th 详细信息
+          %th 所属部门
+          %th 设备状态
+          %th 借出设备
+          - if @myborrow.length >0
+            %th 归还设备
+      %tbody
+        - @devices.each do |device|
+          %tr
+            %td= device.id
+            %td= link_to "#{device.name}", "/devices/#{device.id}"
+            %td= device.kind
+            %td= device.description
+            %td= device.department
+            %td= device.statement
+            - if device.statement == "借出"
+              - @allborrow.each do |ab|
+                - if  ab.device_id == device.id
+                  %td= ab.ordertime.strftime("%Y-%m-%d %H:%M")+" 归还"
+          
+            - elsif device.statement == "可用"
+              %td= link_to '借出设备', "/devices/#{device.id}/borrow"
+            - else
+              %td= "停借"
+          
+            - if device.statement == "借出" and @myborrow.include? device.id
+              %td= link_to "归还设备","/devices/#{device.id}/giveback"
+            - else
+              %td= ""
+            

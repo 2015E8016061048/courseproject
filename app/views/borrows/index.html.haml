@@ -1,0 +1,27 @@
+-# in app/views/borrows/index.html.haml
+
+%h1 待借出设备: #{@device.name}
+%table
+  %thead
+    %tr
+      %th 设备编号
+      %th 设备名称
+      %th 设备类型
+      %th 详细信息
+      %th 所属部门
+      %th 设备状态 
+  %tbody
+    %tr
+      %td= @device.id
+      %td= @device.name
+      %td= @device.kind
+      %td= @device.description
+      %td= @device.department
+      %td= @device.statement
+= form_tag "/borrow", :method => :put do
+  %p
+    = label :borrow,  '请选择归还时间:' 
+    = datetime_select :borrow, 'ordertime'
+    = submit_tag '借出设备',class:"submit"
+%p
+  = link_to '返回', devices_path

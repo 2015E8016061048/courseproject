@@ -1,0 +1,19 @@
+-# in app/views/users/show.html.haml
+%div#users
+  %h1 用户: #{@user.name}
+  %table
+    %thead
+      %tr
+        %th 用户名
+        %th 密码
+      %tbody
+        %tr
+          %td= @user.name
+          %td= @user.passwd
+  - if session[:admin_id] != nil and session[:admin_id] != ""
+    = link_to '编辑', edit_user_path(@user)
+    = link_to '删除', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+    = link_to '返回', users_path
+  - if session[:user_id] != nil and session[:user_id] != ""
+    %p 
+      = link_to '返回', "/devices"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  device_id: 1
+  borrowtime: 2016-01-09 14:50:13
+  ordertime: 2016-01-09 14:50:13
+  givebacktime: 2016-01-09 14:50:13
+
+two:
+  user_id: 1
+  device_id: 1
+  borrowtime: 2016-01-09 14:50:13
+  ordertime: 2016-01-09 14:50:13
+  givebacktime: 2016-01-09 14:50:13

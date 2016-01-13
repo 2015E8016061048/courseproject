@@ -1,0 +1,8 @@
+%h1 管理员页面
+%h3 当前管理员: #{session[:admin_name]} 
+= link_to '用户管理', users_path
+= link_to '设备借用管理', "/borrows"
+= link_to '教学设备管理',"/managedevices"
+= link_to '统计分析',"/analyze"
+= link_to '更改个人信息' ,"/admins/#{ session[:admin_id]}/edit"
+= link_to '退出' , "/managerlogout"

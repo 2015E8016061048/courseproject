@@ -1,0 +1,34 @@
+-#  This file is app/views/devices/search.html.haml
+
+= form_tag "/search", :method => :put do
+  %p
+    = text_field :borrow, 'q',size:60
+    = submit_tag '搜索设备',class: 'submit'
+%table#devices
+  %thead
+    %tr
+      %th 设备编号
+      %th 设备名称
+      %th 设备类型
+      %th 详细信息
+      %th 所属部门
+      %th 设备状态
+      %th 借出设备
+  %tbody
+    - @devices.each do |device|
+      %tr
+        %td= device.id
+        %td= device.name
+        %td= device.kind
+        %td= device.description
+        %td= device.department
+        %td= device.statement
+        - if device.statement == "借出"
+          %td= ""
+        - elsif device.statement == "可用"
+          %td= link_to '借出设备', "/devices/#{device.id}/borrow"
+        - else
+          %td= "停借"
+%p           
+= link_to '返回', "/devices"
+

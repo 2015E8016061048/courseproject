@@ -1,0 +1,13 @@
+-# in app/views/admins/show.html.haml
+
+%h1 Details about #{@admin.name}
+%table
+  %thead
+    %tr
+      %th Name
+      %th Password
+  %tbody
+    %td= @admin.name
+    %td= @admin.passwd
+%p
+  = link_to 'Back to admin list', admins_path

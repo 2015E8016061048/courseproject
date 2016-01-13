@@ -1,0 +1,22 @@
+-#  This file is app/views/users/histor.html.haml
+
+%h1 设备借还历史
+
+%table#borrows
+  %thead
+    %tr
+     
+      %th 设备编号
+      %th 借出时间
+      %th 截止时间
+      %th 归还时间
+      
+  %tbody
+    - @history.each do |borrow|
+      %tr
+        %td= borrow.device_id
+        %td= borrow.borrowtime.strftime("%Y-%m-%d %H:%M:%S")
+        %td= borrow.ordertime.strftime("%Y-%m-%d %H:%M")
+        - if borrow.givebacktime.strftime('%Y-%m-%d') != "1990-01-01"
+          %td= borrow.givebacktime.strftime("%Y-%m-%d %H:%M:%S")
+%p= link_to '返回', devices_path

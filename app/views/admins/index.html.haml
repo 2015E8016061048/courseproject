@@ -1,0 +1,19 @@
+-#  This file is app/views/admins/index.html.haml
+
+%h1 All admins
+%table#admins
+  %thead
+    %tr
+      %th Name
+      %th Password
+      %th Details
+      %th Delete
+  %tbody
+    - @admins.each do |admin|
+      %tr
+        %td= admin.name
+        %td= admin.passwd
+        %td= link_to 'Details',"/"
+        %td= link_to 'Delete', "/"
+%p   
+  = link_to 'Add new admin', "/"
