@@ -25,7 +25,8 @@ class UsersController < ApplicationController
     end
     @user = User.find(params[:id])
  
-    if @user.update(user_params)  and params[:user][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? @user.passwd) and params[:user][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != ""
+    if @user.update(user_params)  and params[:user][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? @user.passwd) and params[:user][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != "" and params[:user][:email] =~ /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ and params[:user][:mobile] =~ /1(3|5|8)\d{9}/ and params[:user][:passwd].length >= 6
+     
       session[:user_name] = params[:user][:name]
       flash[:notice] = "成功更新用户：#{@user.name} 的信息！"
       redirect_to @user
@@ -45,13 +46,15 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   def createuser
-    if (params[:passwd_confirm][:passwd_confirm].eql? params[:user][:passwd])
+    if (params[:passwd_confirm][:passwd_confirm].eql? params[:user][:passwd]) and  params[:user][:passwd] != "" and params[:user][:name] != "" and params[:user][:email] =~ /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ and params[:user][:mobile] =~ /1(3|5|8)\d{9}/ and params[:user][:passwd].length >= 6
+     
       @user = User.new(user_params)
       @user.save
       flash[:notice] = "用户：#{@user.name} 注册成功！  欢迎登录！"
       redirect_to "/login"
+      
     else
-      flash[:warning] = "两次输入密码不一致 !"
+      flash[:warning] = "输入内容存在错误,请重新输入 !"
       render "signup"
     end
   end
@@ -59,11 +62,16 @@ class UsersController < ApplicationController
     if session[:admin_id] == nil and session[:admin_name] == nil
       redirect_to "/managerlogin"
     end
-    @user = User.new(user_params)
- 
-    @user.save
-    flash[:notice] = "成功添加用户：#{@user.name} ！"
-    redirect_to @user
+    if (params[:passwd_confirm][:passwd_confirm].eql? params[:user][:passwd]) and  params[:user][:passwd] != "" and params[:user][:name] != "" and params[:user][:email] =~ /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ and params[:user][:mobile] =~ /1(3|5|8)\d{9}/ and params[:user][:passwd].length >= 6
+     
+      @user = User.new(user_params)
+      @user.save
+      flash[:notice] = "成功添加用户：#{@user.name} ！"
+      redirect_to @user
+    else
+      flash[:warning] = "输入内容存在错误,请重新输入 !"
+      render "/users/new"
+    end 
   end
   
   def show
@@ -115,7 +123,7 @@ class UsersController < ApplicationController
   end
   private
   def user_params
-    params.require(:user).permit(:name, :passwd)
+    params.require(:user).permit(:name, :passwd,:email,:birthday,:sex,:mobile)
   end
     
 end

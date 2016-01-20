@@ -21,7 +21,7 @@
 = form_tag "/borrow", :method => :put do
   %p
     = label :borrow,  '请选择归还时间:' 
-    = datetime_select :borrow, 'ordertime'
+    = datetime_select :borrow, 'ordertime', start_year: Time.now.year,end_year: Time.now.year+5,use_two_digit_numbers: true 
     = submit_tag '借出设备',class:"submit"
 %p
   = link_to '返回', devices_path

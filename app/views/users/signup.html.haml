@@ -5,11 +5,23 @@
       = label :user, :name, '用户名:'
       = text_field :user, 'name',:size=>40
     %p
-      = label :user, :passwd, '密码:'
+      = label :user, :passwd, '至少六位密码:'
       = password_field :user, 'passwd',:size=>40
     %p
       = label :passwd_confirm, :passwd, '密码确认:'
       = password_field :passwd_confirm, 'passwd_confirm',:size=>40
+    %p
+      = label :user, :email, '电子邮件:'
+      = text_field :user, 'email',:size=>40
+    %p
+      = label :user, :birthday, '出生日期:'
+      = date_select :user, 'birthday', start_year: 1950,end_year: 2016,use_two_digit_numbers: true 
+    %p
+      = label :user, :sex, '性别:'
+      = select :user,"sex", ["男","女"]
+    %p
+      = label :user, :mobile, '手机号码:'
+      = text_field :user, 'mobile',:size=>40
     %p= submit_tag '注册',class:"submit"
   %p= link_to '取消',"/login"
   

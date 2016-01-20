@@ -7,6 +7,6 @@
       = text_field 'name', 'name',:size=>40
     %p
       = label  :passwd, '密码:'
-      = text_field 'passwd', 'passwd',:size=>40
+      = password_field 'passwd', 'passwd',:size=>40
     %p= submit_tag '登录',class:"submit"
   %p= link_to '用户登录',"/login"

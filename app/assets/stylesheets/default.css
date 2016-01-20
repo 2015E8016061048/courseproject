@@ -15,7 +15,7 @@ ol, ul, td {
     line-height: 18px;
     background: white;
 }
-div#main {
+#main {
   margin: 0;
   padding: 0;
 }
@@ -52,7 +52,7 @@ a:hover  {  color: red;}
 #login{margin:auto;height:350px;width:400px;text-align:left;}
 #edituser,#editad,#editdevice,
 #signup,#adlogin,
-#newuser,#newdevice,#newad{margin:auto;height:650px;width:400px;text-align:left;}
+#newuser,#newdevice,#newad{margin:auto;height:850px;width:400px;text-align:left;}
 
 ul {
     margin: auto;
