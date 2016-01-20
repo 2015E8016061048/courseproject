@@ -7,7 +7,10 @@
       = text_field :user, 'name',:maxlength => 40, :size => 40
     %p
       = label :user, :passwd, '密码:'
-      = text_field :user, 'passwd',:maxlength => 40, :size => 40
+      = password_field :user, 'passwd',value: @user.passwd,:maxlength => 40, :size => 40
+    %p
+      = label  'passwd_confirm','密码确认:'
+      = password_field 'passwd_confirm', 'passwd_confirm',value: @user.passwd,:maxlength => 40, :size => 40  
     %p= submit_tag '更新',class:"submit"
   - if session[:admin_id] != nil and session[:admin_id] != ""
     = link_to '返回用户管理', users_path

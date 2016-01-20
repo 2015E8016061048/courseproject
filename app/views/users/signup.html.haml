@@ -6,7 +6,10 @@
       = text_field :user, 'name',:size=>40
     %p
       = label :user, :passwd, '密码:'
-      = text_field :user, 'passwd',:size=>40
+      = password_field :user, 'passwd',:size=>40
+    %p
+      = label :passwd_confirm, :passwd, '密码确认:'
+      = password_field :passwd_confirm, 'passwd_confirm',:size=>40
     %p= submit_tag '注册',class:"submit"
   %p= link_to '取消',"/login"
   

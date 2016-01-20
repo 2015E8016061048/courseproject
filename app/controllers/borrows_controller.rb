@@ -1,6 +1,9 @@
 class BorrowsController < ApplicationController
   
   def index
+    if session[:user_id] == nil and session[:user_name] == nil
+      redirect_to "/login"
+    end
     @device = Device.find(params[:id])
     session[:device_id] = @device.id
   end  
@@ -30,19 +33,27 @@ class BorrowsController < ApplicationController
   
   
   def giveback
+
     @borrow = Borrow.where("user_id= ? and date(givebacktime) = date('1990-01-01') and device_id = ?",session[:user_id],params[:id]).take
-    @borrow.givebacktime = Time.now
-    @borrow.save
+    if @borrow == nil or @borrow == ""  or (session[:user_id] == nil and session[:user_name] == nil)
+      redirect_to "/login"
+    else
+      @borrow.givebacktime = Time.now
+      @borrow.save
     
-    @device = Device.find(params[:id])
-    @device.update(statement: "可用")
+      @device = Device.find(params[:id])
+      @device.update(statement: "可用")
     
-    flash[:notice] = "您成功归还设备：#{@device.name} ！"
-    redirect_to devices_path
+      flash[:notice] = "您成功归还设备：#{@device.name} ！"
+      redirect_to devices_path
+    end
   end  
   
  
   def management
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @borrows = Borrow.all
   end
   
@@ -53,6 +64,9 @@ class BorrowsController < ApplicationController
   end
   
   def analyze
+    if session[:admin_id] ==nil and session[:admin_name] == nil 
+      redirect_to "/managerlogin"
+    end
     @counts = Hash.new
     @counts = Borrow.devicescount
     @sum = 0
@@ -62,9 +76,12 @@ class BorrowsController < ApplicationController
   end
   def search
     session[:q] = params[:borrow][:q]
-    @devices = Device.where("name like '%#{params[:borrow][:q]}%' or department like '%#{params[:borrow][:q]}%'" )
+    @devices = Device.where("name like ? or department like ?" ,"%"+params[:borrow][:q]+"%" , "%"+params[:borrow][:q]+"%")
     if @devices == nil or @devices == "" or @devices.length == 0
       flash[:warning] = "没有 #{params[:borrow][:q]} 的匹配结果！"
+      redirect_to "/devices"
+    elsif params[:borrow][:q] == ""
+      flash[:warning] ="搜索内容不能为空 !"
       redirect_to "/devices"
     end
   end

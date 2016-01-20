@@ -1,5 +1,9 @@
 class AdminsController < ApplicationController
+  http_basic_authenticate_with name: "superadmin", password: "superadmin",
+  except: [:edit, :update,:logout,:login,:checklogin]
+  
   def index
+    
     @admins = Admin.all
   end
   
@@ -7,10 +11,16 @@ class AdminsController < ApplicationController
   end
   
   def edit
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @admin = Admin.find(params[:id])
   end
   
   def update
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @admin = Admin.find(params[:id])
     
     if @admin.update(admin_params)

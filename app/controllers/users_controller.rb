@@ -1,39 +1,64 @@
 class UsersController < ApplicationController
   def index
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @users = User.all
   end
   
   def new
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
   end
   
   def edit
+    if session[:admin_id] == nil and session[:admin_name] == nil and session[:user_id] == nil and session[:user_name] == nil
+      redirect_to "/"
+    end
     @user = User.find(params[:id])
   end
   
   def update
+    if session[:admin_id] == nil and session[:admin_name] == nil and session[:user_id] == nil and session[:user_name] == nil
+      redirect_to "/managerlogin"
+    end
     @user = User.find(params[:id])
  
-    if @user.update(user_params)
+    if @user.update(user_params)  and params[:user][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? @user.passwd) and params[:user][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != ""
+      session[:user_name] = params[:user][:name]
       flash[:notice] = "成功更新用户：#{@user.name} 的信息！"
       redirect_to @user
     else
+      flash[:warning] = "存在错误,请重输 !"
       render 'edit'
     end
   end
   
   def destroy
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = "成功删除用户：#{@user.name} ！"
     redirect_to users_path
   end
   def createuser
-    @user = User.new(user_params)
-    @user.save
-    flash[:notice] = "用户：#{@user.name} 注册成功！  欢迎登录！"
-    redirect_to "/login"
+    if (params[:passwd_confirm][:passwd_confirm].eql? params[:user][:passwd])
+      @user = User.new(user_params)
+      @user.save
+      flash[:notice] = "用户：#{@user.name} 注册成功！  欢迎登录！"
+      redirect_to "/login"
+    else
+      flash[:warning] = "两次输入密码不一致 !"
+      render "signup"
+    end
   end
   def create
+    if session[:admin_id] == nil and session[:admin_name] == nil
+      redirect_to "/managerlogin"
+    end
     @user = User.new(user_params)
  
     @user.save
@@ -42,12 +67,16 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
-    
-    @devices = Device.all
+    if session[:admin_id] == nil and session[:admin_name] == nil and session[:user_id] == nil and session[:user_name] == nil
+      redirect_to "/managerlogin"
+    else
+      @user = User.find(params[:id])
+    end
+   
   end
   
   def logout
+    
     session[:user_id] = nil
     session[:user_name] = nil
     flash[:notice] = "成功退出！"
@@ -60,10 +89,14 @@ class UsersController < ApplicationController
   end
   
   def history
+    if session[:user_id] == nil and session[:user_name] == nil
+      redirect_to "/login"
+    end
     @history = Borrow.where("user_id = ?",session[:user_id])
   end
   
   def checklogin
+    
     @user = User.where("name = ? and passwd = ?",  params[:name][:name],params[:passwd][:passwd]).take
     
     if @user != nil and @user != ""

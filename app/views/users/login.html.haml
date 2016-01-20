@@ -7,7 +7,7 @@
       = text_field 'name', 'name', :class => 'textbox activate', :maxlength => 40, :size => 40
     %p
       = label  :passwd, '密码:'
-      = text_field 'passwd', 'passwd', :class => 'textbox password', :maxlength => 40, :size => 40
+      = password_field 'passwd', 'passwd', :class => 'textbox password', :maxlength => 40, :size => 40
     .buttons
       = submit_tag '登录',class:"submit"
   %p  

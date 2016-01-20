@@ -13,7 +13,7 @@
       %tr
         %td= admin.name
         %td= admin.passwd
-        %td= link_to 'Details',"/"
-        %td= link_to 'Delete', "/"
+        %td= link_to 'Details',admin_path(admin) 
+        %td= link_to 'Delete', admin_path(admin), :method => :delete, :confirm => 'Are you sure?'
 %p   
-  = link_to 'Add new admin', "/"
+  = link_to 'Add new admin', new_admin_path
