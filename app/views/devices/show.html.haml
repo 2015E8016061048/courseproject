@@ -20,7 +20,8 @@
         %td= @device.statement
   - if session[:admin_id] != nil and session[:admin_id] != ""
     = link_to '修改设备信息', edit_device_path(@device)
-    = link_to '删除设备信息', device_path(@device), :method => :delete, :confirm => 'Are you sure?'
+    - if @device.statement != "借出"
+      = link_to '删除设备信息', device_path(@device), :method => :delete, :confirm => 'Are you sure?'
     = link_to '返回', "/managedevices"
   - if session[:user_id] != nil and session[:user_id] != ""
     %p

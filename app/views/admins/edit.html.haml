@@ -6,8 +6,11 @@
       = label :admin, :name, '用户名:'
       = text_field :admin, 'name',:size=>40
     %p
-      = label :admin, :passwd, '密码:'
-      = text_field :admin, 'passwd',:size=>40
+      = label :admin, :passwd, '至少六位密码:'
+      = password_field :admin, 'passwd',:size=>40,value: @admin.passwd
+    %p
+      = label :passwd_confirm, :passwd, '密码确认:'
+      = password_field :passwd_confirm, 'passwd_confirm',:size=>40,value: @admin.passwd
     %p= submit_tag '更新个人信息',class:"submit"
     %p= link_to '返回',"/manage"
 

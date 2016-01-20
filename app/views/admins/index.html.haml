@@ -5,14 +5,14 @@
   %thead
     %tr
       %th Name
-      %th Password
+     
       %th Details
       %th Delete
   %tbody
     - @admins.each do |admin|
       %tr
         %td= admin.name
-        %td= admin.passwd
+        
         %td= link_to 'Details',admin_path(admin) 
         %td= link_to 'Delete', admin_path(admin), :method => :delete, :confirm => 'Are you sure?'
 %p   

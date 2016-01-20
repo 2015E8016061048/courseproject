@@ -21,13 +21,16 @@ class AdminsController < ApplicationController
     if session[:admin_id] == nil and session[:admin_name] == nil
       redirect_to "/managerlogin"
     end
+    
     @admin = Admin.find(params[:id])
     
-    if @admin.update(admin_params)
+    if  params[:admin][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? params[:admin][:passwd]) and params[:admin][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != ""  and params[:admin][:passwd].length >=6  
+      @admin.update(admin_params)
       session[:admin_name] = @admin.name
       flash[:notice] = "成功更新个人信息！"
       redirect_to "/manage"
     else
+      flash[:warning] = "存在错误,请重输 !"
       render 'edit'
     end
   end
@@ -40,10 +43,16 @@ class AdminsController < ApplicationController
   end
   
   def create
-    @admin = Admin.new(admin_params)
-    @admin.save
-    flash[:notice] = "成功添加用户：#{@admin.name} ！"
-    redirect_to @admin
+    if  params[:admin][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? params[:admin][:passwd]) and params[:admin][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != ""  and params[:admin][:passwd].length >=6  
+     
+      @admin = Admin.new(admin_params)
+      @admin.save
+      flash[:notice] = "成功添加用户：#{@admin.name} ！"
+      redirect_to @admin
+    else
+      flash[:warning] = "存在错误,请重输 !"
+      render "/admins/new"
+    end
   end
   
   def show

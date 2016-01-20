@@ -5,7 +5,7 @@
     %thead
       %tr
         %th 用户名
-        %th 密码
+       
         %th 电子邮件
         %th 出生日期
         %th 性别
@@ -13,14 +13,15 @@
       %tbody
         %tr
           %td= @user.name
-          %td= @user.passwd
+         
           %td= @user.email
           %td= @user.birthday
           %td= @user.sex
           %td= @user.mobile
   - if session[:admin_id] != nil and session[:admin_id] != ""
     = link_to '编辑', edit_user_path(@user)
-    = link_to '删除', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
+    - if !( @active.include? @user.id)
+      = link_to '删除', user_path(@user), :method => :delete, :confirm => 'Are you sure?'
     = link_to '返回', users_path
   - if session[:user_id] != nil and session[:user_id] != ""
     %p 

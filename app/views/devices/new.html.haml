@@ -14,7 +14,7 @@
       = label :device, :department, '所属部门:'
       = text_field :device, 'department',:size=>40
     %p
-      = label :device, :statement, '设备状态:'
+      = label :device, :statement, '设备状态: ( 借出 可用 维修 故障 )'
       = text_field :device, 'statement',:size=>40
     %p= submit_tag '添加设备',class:"submit"
   %p= link_to '返回',"/managedevices"

@@ -5,8 +5,11 @@
       = label :admin, :name, 'Name'
       = text_field :admin, 'name',:maxlength => 40, :size => 40
     %p
-      = label :admin, :passwd, 'Password'
-      = text_field :admin, 'passwd',:maxlength => 40, :size => 40
+      = label :admin, :passwd, 'Password ( length > 6 )'
+      = password_field :admin, 'passwd',:maxlength => 40, :size => 40
+    %p
+      = label :passwd_confirm, :passwd, 'Password Confirm'
+      = password_field :passwd_confirm, 'passwd_confirm',:maxlength => 40, :size => 40
     %p= submit_tag 'Save Changes',class:"submit"
   %p= link_to 'Back to admin list',"/admins"
   

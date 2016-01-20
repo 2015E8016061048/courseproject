@@ -25,7 +25,8 @@
         %td= user.sex
         %td= user.mobile
         %td= link_to "编辑",  edit_user_path(user)
-        %td= link_to '删除', user_path(user), :method => :delete, :confirm => 'Are you sure?'
+        - if !(@active.include? user.id)
+          %td= link_to '删除', user_path(user), :method => :delete, :confirm => 'Are you sure?'
             
 %p           
 = link_to '添加新用户', new_user_path

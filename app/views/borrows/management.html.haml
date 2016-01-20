@@ -18,7 +18,8 @@
         %td= borrow.borrowtime
         %td= borrow.ordertime
         %td= borrow.givebacktime
-        %td= link_to '删除', "/borrows/#{borrow.id}", :method => :delete, :confirm => 'Are you sure?'
+        - if borrow.givebacktime.strftime("%Y") != "1990"
+          %td= link_to '删除', "/borrows/#{borrow.id}", :method => :delete, :confirm => 'Are you sure?'
 %p= link_to '返回管理员页面',"/manage" 
             
             

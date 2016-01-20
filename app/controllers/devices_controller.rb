@@ -49,10 +49,12 @@ class DevicesController < ApplicationController
     end
     @device = Device.find(params[:id])
  
-    if @device.update(device_params)
+    if params[:device][:name] != "" and params[:device][:kind] != "" and params[:device][:department] != "" and ( params[:device][:statement] == "可用"||params[:device][:statement] == "维修"||params[:device][:statement] == "借出"||params[:device][:statement] == "故障")
+      @device.update(device_params)
       flash[:notice] = "成功更新设备：#{@device.name} ！"
       redirect_to @device
     else
+      flash[:warning] = "存在错误,请重输 !"
       render 'edit'
     end
   end
@@ -71,11 +73,15 @@ class DevicesController < ApplicationController
     if session[:admin_id] == nil and session[:admin_name] == nil
       redirect_to "/managerlogin"
     end
-    @device = Device.new(device_params)
- 
-    @device.save
-    flash[:notice] = "成功添加设备：#{@device.name} ！"
-    redirect_to @device
+    if params[:device][:name] != "" and params[:device][:kind] != "" and params[:device][:department] != "" and ( params[:device][:statement] == "可用"||params[:device][:statement] == "维修"||params[:device][:statement] == "借出"||params[:device][:statement] == "故障")
+      @device = Device.new(device_params)
+      @device.save
+      flash[:notice] = "成功添加设备：#{@device.name} ！"
+      redirect_to @device
+    else
+      flash[:warning] = "输入内容存在错误,请重新输入 !"
+      render "/devices/new"
+    end
   end
   
   def show

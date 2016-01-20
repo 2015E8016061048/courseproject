@@ -4,6 +4,7 @@ class UsersController < ApplicationController
       redirect_to "/managerlogin"
     end
     @users = User.all
+    @active = User.activeusers
   end
   
   def new
@@ -25,8 +26,8 @@ class UsersController < ApplicationController
     end
     @user = User.find(params[:id])
  
-    if @user.update(user_params)  and params[:user][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? @user.passwd) and params[:user][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != "" and params[:user][:email] =~ /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ and params[:user][:mobile] =~ /1(3|5|8)\d{9}/ and params[:user][:passwd].length >= 6
-     
+    if params[:user][:name] != "" and (params[:passwd_confirm][:passwd_confirm].eql? params[:user][:passwd]) and params[:user][:passwd] != "" and params[:passwd_confirm][:passwd_confirm] != "" and params[:user][:email] =~ /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/ and params[:user][:mobile] =~ /1(3|5|8)\d{9}/ and params[:user][:passwd].length >= 6
+      @user.update(user_params)
       session[:user_name] = params[:user][:name]
       flash[:notice] = "成功更新用户：#{@user.name} 的信息！"
       redirect_to @user
@@ -79,6 +80,7 @@ class UsersController < ApplicationController
       redirect_to "/managerlogin"
     else
       @user = User.find(params[:id])
+      @active = User.activeusers
     end
    
   end
